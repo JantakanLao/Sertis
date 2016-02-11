@@ -70,7 +70,7 @@
 <body data-ng-controller="myController" style="background-color:#F0F0F0;">
 
 	<center>
-		<form class="uk-form" style="padding-top:12%; ">
+		<form class="uk-form" style="padding-top:11%; ">
 			 <fieldset data-uk-margin class="uk-form-horizontal">
 		        	<h1 style="color:#00CCFF;">Youknow</h1><br>
 			        <input type="text" name="username" placeholder="username" ng-model="regisForm.username" style="width:25%;height:7%;"><br>
@@ -78,7 +78,8 @@
 			        <input type="password" name="password" placeholder="password" ng-model="regisForm.password" style="width:25%;height:7%;"><br>
 			        <input type="password" name="confirmpassword" placeholder="confirmpassword" ng-model="regisForm.confirmpassword" style="width:25%;height:7%;"><br>
 			        <br>
-					<button class="uk-button" ng-click="registration();" style="width:25%;height:7%;">Submit</button>
+					<button class="uk-button" ng-click="registration();" style="width:25%;height:7%;">Submit</button><br><br>
+					<a href="<?= site_url("controlpage/loginpage");?> ">Login</a>
 			</fieldset>
 		</form>
 	</center>
