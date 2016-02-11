@@ -63,7 +63,7 @@
 <body data-ng-controller="myController" style="background-color:#F0F0F0;">
 	
 	<div class="uk-grid uk-grid-collapse">
-	    <div class="uk-width-1-5">
+	    <div class="uk-width-1-5" >
 	    	<div style="height:12%;background-color:00CCFF;">
 	    		<div class="uk-grid uk-grid-collapse" style="font-size:20px;">
 	    			<div class="uk-panel uk-panel-box uk-margin-top" style="border:1px solid #00CCFF;background-color:#00CCFF;color:white;"> 

@@ -74,8 +74,7 @@
 			        <br>
 					<button class="uk-button" ng-click="login();" style="width:25%;height:7%;">Login</button><br><br>
 					<a href="<?= site_url("controlpage/registerpage");?> ">Register</a>
-				<!--/div-->
-			 </fieldset>
+			</fieldset>
 
 		</form>
 	</center>

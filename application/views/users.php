@@ -94,7 +94,7 @@
                     }
 
             $scope.deletecard = function(cardid){
-                //console.log('1234');
+                
                 var req = {
                         method: 'POST',
                         url: "<?php echo site_url("ControlPage/deletecard")?>" + '/' + cardid,
@@ -146,19 +146,14 @@
 				window.location.assign("<?php echo site_url("ControlPage/userspage/")?>");
 
 			}
-			$scope.hide = function(){
-				
-				$("#aa").hide();
-			}
-
-
+			
 		});
 	</script>
 
 </head>
 <body data-ng-controller="myController" style="background-color:#F0F0F0;">
 	
-	<div class="uk-grid uk-grid-collapse">
+	<div class="uk-grid uk-grid-collapse" >
 	    <div class="uk-width-1-5">
 	    	<div style="height:12%;background-color:00CCFF;">
 	    		<div class="uk-grid uk-grid-collapse" style="font-size:20px;">
@@ -385,6 +380,4 @@
 	</div>
 						
 </body>
-
-
 </html>

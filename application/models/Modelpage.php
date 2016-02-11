@@ -67,6 +67,8 @@ class ModelPage extends CI_Model{
     public function retrieve_allinfo()
 	{
 		$result = [];
+		$this->db->order_by("card_id", "desc"); 
+
 		$query1 = $this->db->get_where('card', [
 					'status' => "public"			
 			]);
@@ -160,6 +162,7 @@ class ModelPage extends CI_Model{
     public function retrieve_category($category='')
 	{
 		$result = [];
+		$this->db->order_by("card_id", "desc"); 
 		$query1 = $this->db->get_where('card', [
 					'category' => $category,
 					'status'   => "public"	

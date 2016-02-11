@@ -44,9 +44,7 @@ class ControlPage extends CI_Controller {
 			$password         = $this->input->post('password');
 			$confirmpassword  = $this->input->post('confirmpassword');
 
-			//$encrypt_password = sha1($confirmpassword);
-
-		    $error['id']  = $this->ModelPage->regis($username,$email,$confirmpassword);
+            $error['id']  = $this->ModelPage->regis($username,$email,$confirmpassword);
 		}
 
 		 echo json_encode($error);
@@ -92,6 +90,7 @@ class ControlPage extends CI_Controller {
 	        $this->output
 	        	->set_content_type('application/json')
 	        	->set_output(json_encode($temp));
+
     }
 
     public function retrieveinfo()
@@ -118,8 +117,6 @@ class ControlPage extends CI_Controller {
         $category	= $this->input->post('category');
         $author	    = $this->input->post('author');
 
-       
-
         $result     = $this->ModelPage->add_newcard($user_id,$name,$status,$content,$category,$author);
      	
      	if($result == true)
@@ -145,25 +142,13 @@ class ControlPage extends CI_Controller {
 
     public function editcardpage($cardid=0)
     {
-    	/*$data = array();
-        $data['id'] = $id;
-        $this->load->view('editcard',$cardid);*/
-
+    	
         $parse_data = [
               'cardInfo' => $this->ModelPage->retrieve_editcard($cardid),
-              //'card_id'  => $cardid      
+        ];
 
-         ];
-
-         $this->load->view('editcard', $parse_data);
-
-
-
-         /*$temp = $this->ModelPage->retrieve_editcard($cardid);
-	        $this->output
-	        	->set_content_type('application/json')
-	        	->set_output(json_encode($temp));*/
-            
+        $this->load->view('editcard', $parse_data);
+     
     }
     public function editoldcard($card_id=0)
     {
@@ -199,7 +184,7 @@ class ControlPage extends CI_Controller {
 	        'msg' => '',
 	        
 	    );
-	    //$cardid = $this->input->post('msg'); 
+	    
 	    $result = $this->ModelPage->delete_card($cardid);
 	    
 	    if($result == true){
@@ -217,34 +202,11 @@ class ControlPage extends CI_Controller {
 
 	public function retrievecategory($category='')
     {
-    	
-    	/*$parse_data = [
-              'categoryInfo' => $this->ModelPage->retrieve_category($category),
-              //'card_id'  => $cardid      
-
-         ];
-
-         $this->load->view('category', $parse_data);*/
-
-         /*$this->output
-                ->set_content_type('application/json')
-                ->set_output(json_encode($category));*/
-         
-         //$temp = json_encode($category);
-         //echo $category;
-
-         $temp = $this->ModelPage->retrieve_category($category);
+    	$temp = $this->ModelPage->retrieve_category($category);
             $this->output
                 ->set_content_type('application/json')
                 ->set_output(json_encode($temp));
 
-         //$temp2 = $this->ModelPage->retrieve_category($category);
-	        
-              /*$temp2 = $this->ModelPage->retrieve_category($category);
-          //echo json_encode($temp2);
-            
-             $dee =  json_encode($temp2,JSON_UNESCAPED_UNICODE);*/
-             //echo $temp2;
     }
 
     public function check_session()
@@ -279,11 +241,6 @@ class ControlPage extends CI_Controller {
             
     }
 
-    public function home()
-    {
-    	$this->load->view('home');
-    }
-
     public function registerpage()
     {
     	$this->load->view('register');
@@ -310,12 +267,6 @@ class ControlPage extends CI_Controller {
               'category' => $category,
         ];
         $this->load->view('category',$parse_data);
-    }
-   
-
-    public function maintain()
-    {
-    	$this->load->view('maintain');
     }
     
 }
